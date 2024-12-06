@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Hexagonal: Shape {
+struct Hexagon: Shape {
     func path(in rect: CGRect) -> Path {
         return Path { path in
             let p1 = CGPoint(x: 0, y: 20)
@@ -29,5 +29,5 @@ struct Hexagonal: Shape {
 }
 
 #Preview {
-    Hexagonal().frame(width: 100, height: 120, alignment: .center)
+    Hexagon().frame(width: 100, height: 120, alignment: .center)
 }
