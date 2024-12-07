@@ -8,17 +8,15 @@
 import SwiftUI
 
 struct Menu: View {
-    @State public var symbols = ["eating", "happy", "love", "scary", "sleeping"]
-    @State public var nubmers = [0, 1, 2, 3, 4]
+    @State public var symbols = ["eating", "happy", "love"]
+    @State public var numbers = [0, 1, 2]
     @State public var counter = 0
     @State private var showingAlert: Choice?
     
     var body: some View {
         ZStack {
             Image("sunshine").resizable().ignoresSafeArea()
-            
             VStack(alignment: .center, spacing: 80, content: {
-                
                 HStack {
                     Image("fire").resizable().scaledToFit().shadow(color: .orange, radius: 1, y: 3)
                     
@@ -27,28 +25,53 @@ struct Menu: View {
                         .fontWeight(.black)
                         .shadow(color: .orange, radius: 1, y: 3)
                     Image("fire").resizable().scaledToFit().shadow(color: .orange, radius: 1, y: 3)
-                }.frame(width: .infinity, height: 50, alignment: .center)
+                }.frame(width: nil, height: 50)
                 
                 VStack(spacing: 15, content: {
                     HStack(spacing: 35) {
-                        createSymbol(symbol: symbols.first!)
-                        createSymbol(symbol: symbols[1])
+                        createSymbol(symbol: symbols[self.numbers[0]])
+                        createSymbol(symbol: symbols[self.numbers[1]])
                     }
                     
-                    createSymbol(symbol: symbols[2])
+                    createSymbol(symbol: symbols[self.numbers[2]])
                     
                     HStack(spacing: 35, content: {
-                        createSymbol(symbol: symbols[3])
-                        createSymbol(symbol: symbols[4])
+                        createSymbol(symbol: symbols[self.numbers[0]])
+                        createSymbol(symbol: symbols[self.numbers[1]])
                     })
                 })
                 
-                Button(action: { print("Spin is clicked.") }, label: {
-                    RoundedRectangle(cornerRadius: 10).fill(Color.orange).frame(width: .infinity, height: 50).overlay(content: {
+                Button(action: {
+                    
+                    self.numbers[0] = Int.random(in: 0...self.numbers.count - 1)
+                    self.numbers[1] = Int.random(in: 0...self.numbers.count - 1)
+                    self.numbers[2] = Int.random(in: 0...self.numbers.count - 1)
+                    
+                    counter += 1
+                    
+                    if self.numbers[0] == self.numbers[1] && self.numbers[1] == self.numbers[2] {
+                        self.showingAlert = Choice.success
+                        counter = 0
+                    }
+                    
+                    if counter > 5 {
+                        self.showingAlert = .failure
+                        counter = 0
+                    }
+                    
+                }, label: {
+                    RoundedRectangle(cornerRadius: 10).fill(Color.orange).frame(width: 250, height: 50).overlay(content: {
                         Text("Spin").font(.system(size: 25, weight: .black)).foregroundStyle(.black).shadow(color: .gray.opacity(0.8), radius: 1, y: 3)
                     })
-                }).padding(.horizontal, 85).shadow(color: .gray.opacity(0.8), radius: 1, y: 5)
-            })
+                }).shadow(color: .gray.opacity(0.8), radius: 1, y: 5)
+            }).alert(item: $showingAlert) { alert -> Alert in
+                return switch(alert) {
+                case .success:
+                    Alert(title: Text("Yeahhh! you won"), message: Text("Born with the charm"), dismissButton: .cancel())
+                case .failure:
+                    Alert(title: Text("Oooopss!"), message: Text("Better luck next time"), dismissButton: .cancel())
+                }
+            }
         }
     }
     
