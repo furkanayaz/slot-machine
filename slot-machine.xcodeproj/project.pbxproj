@@ -6,13 +6,31 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3F07F1C12D047605002D918D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3F07F1C02D047605002D918D /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		3F07F1C02D047605002D918D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		3F76340F2CFAEB78001FB608 /* slot-machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "slot-machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3F07F1C32D04790A002D918D /* Exceptions for "slot-machine" folder in "slot-machine" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3F76340E2CFAEB78001FB608 /* slot-machine */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3F7634112CFAEB78001FB608 /* slot-machine */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3F07F1C32D04790A002D918D /* Exceptions for "slot-machine" folder in "slot-machine" target */,
+			);
 			path = "slot-machine";
 			sourceTree = "<group>";
 		};
@@ -32,6 +50,7 @@
 		3F7634062CFAEB78001FB608 = {
 			isa = PBXGroup;
 			children = (
+				3F07F1C02D047605002D918D /* Localizable.xcstrings */,
 				3F7634112CFAEB78001FB608 /* slot-machine */,
 				3F7634102CFAEB78001FB608 /* Products */,
 			);
@@ -91,6 +110,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 3F7634062CFAEB78001FB608;
 			minimizedProjectReferenceProxies = 1;
@@ -109,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F07F1C12D047605002D918D /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +205,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -240,6 +262,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -254,6 +277,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"slot-machine/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "slot-machine/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Slot Machine";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -283,6 +308,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"slot-machine/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "slot-machine/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Slot Machine";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

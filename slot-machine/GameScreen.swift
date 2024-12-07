@@ -20,7 +20,7 @@ struct GameScreen: View {
                 HStack {
                     Image("fire").resizable().scaledToFit().shadow(color: .orange, radius: 1, y: 3)
                     
-                    Text("Slot Machine")
+                    Text("slot-machine")
                         .font(.system(size: 30))
                         .fontWeight(.black)
                         .shadow(color: .orange, radius: 1, y: 3)
@@ -61,15 +61,15 @@ struct GameScreen: View {
                     
                 }, label: {
                     RoundedRectangle(cornerRadius: 10).fill(Color.orange).frame(width: 250, height: 50).overlay(content: {
-                        Text("Spin").font(.system(size: 25, weight: .black)).foregroundStyle(.black).shadow(color: .gray.opacity(0.8), radius: 1, y: 3)
+                        Text("spin").font(.system(size: 25, weight: .black)).foregroundStyle(.black).shadow(color: .gray.opacity(0.8), radius: 1, y: 3)
                     })
                 }).shadow(color: .gray.opacity(0.8), radius: 1, y: 5)
             }).alert(item: $showingAlert) { alert -> Alert in
                 return switch(alert) {
                 case .success:
-                    Alert(title: Text("Yeahhh! you won"), message: Text("Born with the charm"), dismissButton: .cancel())
+                    Alert(title: Text("win-title"), message: Text("win-msg"), dismissButton: .cancel())
                 case .failure:
-                    Alert(title: Text("Oooopss!"), message: Text("Better luck next time"), dismissButton: .cancel())
+                    Alert(title: Text("lose-title"), message: Text("lose-msg"), dismissButton: .cancel())
                 }
             }
         }
