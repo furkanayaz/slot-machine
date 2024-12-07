@@ -11,7 +11,7 @@ import SwiftUI
 struct slot_machineApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Menu()
         }
     }
 }
