@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Menu: View {
+struct GameScreen: View {
     @State public var symbols = ["eating", "happy", "love"]
     @State public var numbers = [0, 1, 2]
     @State public var counter = 0
@@ -84,5 +84,5 @@ struct Menu: View {
 }
 
 #Preview {
-    Menu()
+    GameScreen()
 }
